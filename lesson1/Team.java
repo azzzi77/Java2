@@ -1,6 +1,9 @@
 package lesson1;
 
 public class Team {
+    public int countTeams;
+
+    static int instances = 0;
 
     public String teamName;
     private Competitor[] competitors;
@@ -8,6 +11,7 @@ public class Team {
     public Team(String teamName, Competitor... competitors) {
         this.teamName = teamName;
         this.competitors = competitors;
+        instances++;
     }
 
     public Competitor[] getCompetitors() {
@@ -21,10 +25,17 @@ public class Team {
         }
     }
 
-    public void positiveInfo() {
-        System.out.printf("%s positive :\n", teamName);
+    public int positiveInfo() {
+
+        countTeams = 0;
+        //System.out.printf("%s positive :\n", teamName);
         for (Competitor competitor : competitors) {
-            if (competitor.isOnDistance()) competitor.result();
+            if (competitor.isOnDistance()) {
+                //competitor.result();
+               countTeams++;
+
+            }
         }
+        return countTeams;
     }
 }
