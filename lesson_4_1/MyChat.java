@@ -13,6 +13,7 @@ public class MyChat extends JFrame {
 
     JTextArea textArea;
     JTextField textMsg;
+    JScrollPane textAreaScroll;
 
     public MyChat() {
         setTitle(":::: \\w/  Гламурный чат для Блондинко v1.0  \\w/  ::::");
@@ -48,7 +49,7 @@ public class MyChat extends JFrame {
         textArea = new JTextArea();
         textArea.setFont(font);
         textArea.setBackground(new java.awt.Color(255, 190, 226));
-        JScrollPane textAreaScroll = new JScrollPane(textArea);
+        textAreaScroll = new JScrollPane(textArea);
          center.add(textAreaScroll, BorderLayout.CENTER);
         textArea.setEditable(false);
 
@@ -90,9 +91,12 @@ public class MyChat extends JFrame {
             SimpleDateFormat formatForDateNow = new SimpleDateFormat("hh:mm:ss");
             textArea.append("[" + formatForDateNow.format(dateNow) + "] : " + textMsg.getText() + "\n");
             textMsg.setText(""); // чистем поле после
+            textMsg.grabFocus();
+            textArea.setCaretPosition(textArea.getDocument().getLength());
         }
         else {
             infoBox("А сообщение кто, Пушкин писать будет?!", "ОШИБКАААААААААААА!");
+            textMsg.grabFocus();
             //textArea.setForeground(Color.red);
            // textArea.append("Ты забыл написать сообщение...\n");
         }
