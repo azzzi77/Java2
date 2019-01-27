@@ -1,8 +1,32 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"  prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main" >
+   <children>
+      <Button fx:id="button" defaultButton="true" layoutX="413.0" layoutY="342.0" mnemonicParsing="false" onAction="#SendMsgChat" prefHeight="44.0" prefWidth="173.0" text="ОТПРАВИТЬ">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="textMsg" layoutX="16.0" layoutY="342.0" prefHeight="44.0" prefWidth="390.0" onAction="#SendMsgChat" style="-fx-background-color: pink;" >
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+      </TextField>
+      <TextArea  fx:id="textArea" editable="false" layoutX="16.0" layoutY="14.0" prefHeight="325.0" prefWidth="569.0" style="-fx-background-color: green;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextArea>
+   </children>
+</Pane>
